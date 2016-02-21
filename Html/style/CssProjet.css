@@ -5,6 +5,18 @@
 			margin: 0px;
 			background-color:rgb(125,125,125);
 		}
+
+
+		.nono
+		{
+			color: black;
+		}
+
+
+	.nav-pills
+	{
+		margin-left: 20px;
+	}
 	
 	.taille{
 			height : 580px;
@@ -23,7 +35,7 @@
 				background-color: rgb(120, 170, 255);
 				color: white;
 				padding: 10px;
-				margin: 20px;
+				margin: 3%;
 				text-decoration: none;
 				border-radius: 5px 5px 5px 5px;
 				font-family: "Lucida Handwriting";
