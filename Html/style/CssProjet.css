@@ -1,11 +1,15 @@
 	body {
 			font-family: "Times New Roman";
-			height : 580px;
-			width : 1365px;
+			height : 100%;
+			width : 100%;
 			margin: 0px;
-			background-color:rgb(125,125,125);
+			background-color:rgb(200,200,200);
 		}
 
+		nav
+		{
+			
+		}
 
 		.nono
 		{
@@ -13,14 +17,18 @@
 		}
 
 
+		
+
 	.nav-pills
 	{
-		margin-left: 20px;
+		font-size: 16px;
+		margin-left: 10%;
 	}
 	
-	.taille{
-			height : 580px;
-			}
+	.taille
+	{
+		height : 580px;
+	}
 
 	h1	{
 			background-color:rgb(225, 190, 50);
