@@ -7,3 +7,7 @@
 		- Choix Technologie C/S
 		- BDD Design
 		- OUTPUT AddValue (pour le client)
+
+# SP 25/02/16 : Ajout :
+		- Images annexes V1
+		- Description page accueil V1
