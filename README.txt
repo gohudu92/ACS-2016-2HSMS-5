@@ -5,7 +5,9 @@
 # SP 22/02/16 : Point Projet 1 
 		- Gestion d'identité
 		- Choix Technologie C/S
-		- BDD Design
+		- BDD Design : Le test pendant l'élaboration : 'élaboration de tests 
+unitaires et de code "technique" d'une part, l'élaboration de tests fonctionnels (servant
+à formaliser les exigences) et de "fonctionnalités" d'autre part.
 		- OUTPUT AddValue (pour le client)
 
 # SP 25/02/16 : Ajout :
