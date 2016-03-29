@@ -3,7 +3,7 @@ var page= 'aucune';
 
 // fonctions initiales
 description_site();
-
+creer_mosaique();
 function description_site() {
 	var flow ="Bienvenu sur CerveauTraining où vous trouverez plusieurs jeux d'entraînement cérébral à découvrir "+
 	"pour toute la famille, pour les petits comme pour les grands enfants ! Ce site vous propose des jeux pour "+
@@ -60,6 +60,21 @@ var stockImge = "";
 var countTIM = 30;
 //var counter = setInterval(timerCount,1000);
 var counter = setInterval(prochaineEtape,5000);
+
+function creer_mosaique() {
+	var j;
+	for (j=1 ; j<=3;j++)
+	{
+	var flow = document.createElement('div');
+	flow.setAttribute('class','colonne');
+	var i;
+	for(i=0 ; i<=5;i++)
+	{
+		flow.innerHTML += "<img id='"+j+"imgMosa"+i+"' src='images/photo"+i+".png' onmouseover='jeSuisDessu(this.id)' onmouseleave='jeSuisDessu(this.id)'>";
+	}
+	document.querySelector('.mosaique').appendChild(flow);
+	}
+}
 
 function prochaineEtape() {
 			
