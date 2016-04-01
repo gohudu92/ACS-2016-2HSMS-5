@@ -1,4 +1,4 @@
-# ACS-2016-2HSMS-5 /////
+# ACS-2016-2HSMS-5
 
 # SP 26/03/16 : Ajout de la mosaique d'Hugo (adaptation à l'HTML, sans références aux jeux pour l'instant)
 		Ajout du script pour la génération des pages
