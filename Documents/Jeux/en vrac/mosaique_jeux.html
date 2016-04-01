@@ -1,0 +1,792 @@
+<html xml:lang="fr">
+	<head>
+		<title>test mosaique </title>
+		<link rel="stylesheet" type="text/css" href="index_css.css">
+	</head>
+	<body>
+	<h2> MOSAIQUE </h2>
+		<button type="button" onclick="setInterval(timerCount,1000)">etape suivante</button>
+		<div id="mosaique">
+			<div class="colonne">
+				<img id="1imgMosa0" src="img/photo0.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="1imgMosa1" src="img/photo1.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="1imgMosa2" src="img/photo2.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="1imgMosa3" src="img/photo3.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="1imgMosa4" src="img/photo4.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="1imgMosa5" src="img/photo5.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+			</div>
+			<div class="colonne">
+				<img id="2imgMosa0" src="img/photo0.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="2imgMosa5" src="img/photo1.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="2imgMosa1" src="img/photo2.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="2imgMosa3" src="img/photo3.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="2imgMosa4" src="img/photo4.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="2imgMosa2" src="img/photo5.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">		
+			</div>
+			<div class="colonne">
+				<img id="3imgMosa0" src="img/photo0.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="3imgMosa5" src="img/photo1.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="3imgMosa1" src="img/photo2.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="3imgMosa3" src="img/photo3.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="3imgMosa4" src="img/photo4.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">
+				<img id="3imgMosa2" src="img/photo5.png" onmouseover="jeSuisDessu(this.id)" onmouseleave="jeSuisDessu(this.id)">		
+			</div>
+
+		</div>
+		
+		<h2> MEMO - Jeux de reflexion </h2>
+		<p div id="timing"> TEMPS FINAL </p>
+		<button type="button" onclick="remiseAuDebut()">shake</button>
+		<div id="memo">
+		<div class="colonne">
+				<img id="pos11" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos21" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos31" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos41" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		<div class="colonne">
+				<img id="pos12" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos22" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos32" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos42" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		<div class="colonne">
+				<img id="pos13" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos23" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos33" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos43" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		<div class="colonne">
+				<img id="pos14" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos24" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos34" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos44" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		</div>
+	
+	<h2> calcul Mental </h2>
+	<button type="button" onclick="randomNombre()">shake</button>
+	<p div id='timingCalul'> TIMER </div></p>
+	<div id="calcul" style = "width : 450px">
+	<p style="text-align:center;">	<div id="premierNB" style="font-size:500%"> ... </div> 
+		<div id="operation" style="font-size:500%"> + </div>
+		<div id="deuxiemeNB" style="font-size:500%"> ...  </div>  
+		<div id="egal" style="font-size:500%"> =  </div> 
+		<div id="resultat" style="font-size:500%"> ...  </div>	</p>
+	</div>
+	<button type="button" onclick="toucheBool(true)"> Vrai </button>
+	<button type="button" onclick="toucheBool(false)"> Faux </button>
+
+
+	<h2> Ne pas Toucher </h2>
+	 <canvas id="canvasAdress" width="500" height="500">
+      </canvas>
+
+
+     <h2> Jeux clavier rapide </h2>
+     <div id="hauteFrappe">
+     </div>
+     <div id="frappeRapide" style="border: 10px solid black;width:250px;">
+     <button type="button" onclick="randomMot(),setInterval(timer, 1000)" style="font-size: 100%;  width:250px; margin: auto;">RUN</button> 
+     <p  id ="bonneRep" style="font-size: 100%; width:250px; text-align: center; border: 8px solid black;width:100px; margin-left: 5%;">SCORE</p>
+     <p  id ="timerClavier" style="font-size: 100%; width:250px; text-align: center; border: 8px solid black;width:100px; margin-left: 5%;">TIMER</p>
+     <p  id ="motAtapper" style="font-size: 300%;text-align: center;"> Texte </p>
+     <input type="text" name="fname" id="entreeClavier" style="font-size:110% ;height: 100px; width:250px; margin: auto;" >
+
+     </div>
+
+	<h2> Jeux reflexion </h2>
+	<div id="scoreRefle"> Compteur </div>
+	<div id="timerRefiD"> TIMER </div>	
+	<table style="font-size:250%">
+	<button type="button" onclick="generateurTableau()"> Create </button>
+	<button type="button" onclick="caseVide()"> Create Vide </button>
+	<div id="tableauChiffre">
+	
+	
+	</div>
+	</table>
+	
+	<h2> clickRapide - Jeux de rapidite </h2>
+	<button type="button" onclick="loopClick()"> shake </button>
+	<p id="scoreClick"> 0 <P>
+	<button type="button" onclick="setInterval(timingClick,1000)"> Border </button>
+	<div id="clickRapide">
+		<div class="colonne">
+				<img id="posi11" src="img/photo1.png">
+				<img id="posi12" src="img/photo2.png">
+				<img id="posi13" src="img/photo3.png">				
+		</div>
+		<div class="colonne">
+				<img id="posi21" src="img/photo4.png">
+				<img id="posi22" src="img/photo5.png">
+				<img id="posi23" src="img/photo6.png">
+		</div>
+		<div class="colonne">
+			<div id="ZoneJoueur">
+				<img id="imageAtrouver" src="img/photo1.png" onclick="laMeme(this.id)">
+			</div>
+		</div>
+	</div>
+	
+	
+	<script>
+	
+	function pausecomp(ms) {
+		ms += new Date().getTime();
+		while (new Date() < ms){}
+} ;
+	
+	
+	// PARTIE MOSAIQUE 
+	var nombreDeTour = 0;
+	var stockImge = "";
+	function prochaineEtape()
+		{
+			
+			for(var i=0;i<6;i++)
+			{
+				var chemin = '1imgMosa'+i;
+				var image = document.getElementById(chemin);
+				var j = (i+1+nombreDeTour)%6;
+				chemin = 'img/photo'+j+'.png';
+				image.src = chemin;
+			}
+			for(var i=0;i<6;i++)
+			{
+				var chemin = '2imgMosa'+i;
+				var image = document.getElementById(chemin);
+				var j = (i+3+nombreDeTour)%6;
+				chemin = 'img/photo'+j+'.png';
+				image.src = chemin;
+			}
+			for(var i=0;i<6;i++)
+			{
+				var chemin = '3imgMosa'+i;
+				var image = document.getElementById(chemin);
+				var j = (i+4+nombreDeTour)%6;
+				chemin = 'img/photo'+j+'.png';
+				image.src = chemin;
+			}
+			nombreDeTour++
+		};
+	
+	function jeSuisDessu(id)
+	{
+		var image = document.getElementById(id);
+		if(image.src.match("dessus"))
+		{
+			image.src = stockImge;
+		}
+		else
+		{
+			stockImge = image.src;
+			image.src="img/dessus.png";
+		}
+		
+	};
+	// PARTIE MEMO
+	
+	var position = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44];
+	
+	function aleaPhoto()
+	{
+	
+	var position = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44];
+	var index = 1;
+	var resultAlea = new Array(16);
+	while(index < 9)
+	{
+			
+			var longueurTab = position.length;
+			var pos1 = Math.floor((Math.random() * longueurTab)+1)-1;
+			var pos2 = Math.floor((Math.random() * longueurTab)+1)-1;
+			while(pos1 == pos2)
+			{
+				pos2 = Math.floor((Math.random() * longueurTab)+1)-1;
+			}
+			
+		
+			// ------------ //
+			
+			var position2 = new Array(longueurTab-2);
+			var num = 0;
+			for(var i=0;i<longueurTab;i++)
+			{
+				if(i != pos1 && i != pos2)
+				{
+					position2[num] = position[i];
+					num++;
+				}
+			}
+			
+			resultAlea[(index-1)*2] = position[pos1];
+			resultAlea[(index-1)*2+1] = position[pos2];
+			
+			
+			position = new Array(longueurTab-2);
+			for(var i=0;i<longueurTab-2;i++)
+			{	
+					position[i] = position2[i];							
+			}
+			
+			
+		index++;
+	}
+	return resultAlea;
+	};
+	
+	var photoActu = aleaPhoto();
+	console.log(photoActu[10]);
+	
+	var seul = true;
+	var dernierVue = new Array(2); // on stcock en 0 position et en 1 l'image
+	var depuceler = false;
+	var tempsDepart = 0;
+	var compteur=0;
+	
+	function retourne(id)
+	{
+		if(!document.getElementById(id).src.match('check'))
+		{
+		
+		if(!depuceler)
+		{
+			tempsDepart = new Date().getTime();
+		}
+		
+		var positionString = id[id.length-2];
+		positionString += id[id.length-1];
+		
+		var index = 0;
+		while(photoActu[index]!=positionString)
+			{
+				index++;
+			}
+			
+		index = (index -index%2)/2;
+		index++;
+		
+		
+		var posID1 = 'pos'+positionString;
+		var posID2 = 'pos'+dernierVue[0];
+			
+		var image1 = document.getElementById(posID1);
+		var image2 = document.getElementById(posID2);
+			
+		
+		
+		if(seul)
+		{
+			remiseZero();
+			seul = false;
+			dernierVue[0] = positionString;
+			dernierVue[1] = index;
+			image1.src = 'img/photo'+index+'.png';
+		}
+		
+		else
+		{
+			seul = true;
+			image1.src = 'img/photo'+index+'.png';			
+			if(dernierVue[1] == index && dernierVue[0] != positionString)
+			{
+				var nomPhoto = 'img/check.png';
+				image1.src = nomPhoto;
+				image2.src = nomPhoto;
+				compteur++;
+			}
+			if(compteur == 8)
+			{
+				var chrono = new Date().getTime() - tempsDepart;
+				document.getElementById('timing').innerHTML = chrono/1000 + 'Secondes';
+				
+			}
+		
+		}
+		depuceler = true;
+		}
+	};
+	
+	function remiseZero()
+	{
+		for(var i=0;i<16;i++)
+		{
+			var image = document.getElementById('pos'+position[i]);
+			if(!image.src.match('check'))
+			{
+				image.src = 'img/cache.png';
+			}
+		}
+	
+	}
+	
+	function remiseAuDebut()
+	{
+		for(var i=0;i<16;i++)
+		{
+			var image = document.getElementById('pos'+position[i]);
+			image.src = 'img/cache.png';
+		}
+		photoActu = aleaPhoto();
+		seul = true;
+		dernierVue = new Array(2); // on stcock en 0 position et en 1 l'image
+		depuceler = false;
+		tempsDepart = 0;
+		compteur=0;
+		document.getElementById('timing').innerHTML = 'TEMPS FINAL';
+	
+	}
+	var countTIM = 30;
+	function timerCount()
+	{
+  		countTIM=countTIM-1;
+  		if (countTIM <= -1)
+  		{
+    		 clearInterval(counter);
+     //counter ended, do something here
+    	 	return;
+  		}		
+	prochaineEtape();
+  //Do code for showing the number of seconds here
+	}
+	/*
+	function aleaPhoto()
+	{
+	
+	var position = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44];
+	var index = 1;
+	while(index < 9)
+	{
+			
+			var longueurTab = position.length;
+			var pos1 = Math.floor((Math.random() * longueurTab)+1)-1;
+			var pos2 = Math.floor((Math.random() * longueurTab)+1)-1;
+			while(pos1 == pos2)
+			{
+				pos2 = Math.floor((Math.random() * longueurTab)+1)-1;
+			}
+			
+			// ------------ //
+			var nomPhoto = 'img/photo'+index+'.png';
+			var posID1 = 'pos'+position[pos1];
+			var posID2 = 'pos'+position[pos2];
+			
+			// ------------ // 
+			
+			var image1 = document.getElementById(posID1);
+			var image2 = document.getElementById(posID2);
+			image1.src = nomPhoto;
+			image2.src = nomPhoto;
+			
+			// ------------ //
+			
+			var position2 = new Array(longueurTab-2);
+			var num = 0;
+			for(var i=0;i<longueurTab;i++)
+			{
+				if(i != pos1 && i != pos2)
+				{
+					position2[num] = position[i];
+					num++;
+				}
+			}
+			position = new Array(longueurTab-2);
+			
+			for(var i=0;i<longueurTab-2;i++)
+			{	
+					position[i] = position2[i];
+							
+			}
+		index++;
+	}
+	};
+	*/
+	
+	// -----------------------------------------------------------//
+	
+	// PARTIE clickRapide 
+	
+	var positionClick = [11,12,13,21,22,23];
+	var photoEnCours2;
+	var compteurClick = 0;
+	function aleaClick()
+	{
+		return  (Math.floor((Math.random() * 6)+1)-1);
+	}
+	
+	function afficheUne(variable)
+	{
+		for (var i=0;i<6;i++)
+		{	
+			if(i == variable)
+				{
+				var nomPhoto = 'img/photo'+variable+'.png';
+				}
+			else
+				{
+				var nomPhoto = 'img/cache.png';
+				}
+			var posID1 = 'posi'+positionClick[i];
+			var image1 = document.getElementById(posID1);
+			image1.src = nomPhoto;
+		}	
+	}
+	
+	function loopClick()
+	{	
+		
+		photoEnCours2 = aleaClick();
+		afficheUne(photoEnCours2);	
+		
+	}
+	function laMeme(id)
+	{
+		var image = document.getElementById(id);
+		if(image.src.match("img/photo"+photoEnCours2+".png"))
+		{
+			compteurClick++;
+		}
+		else
+		{
+			compteurClick--;
+		}
+		console.log(image.src);
+		console.log("img/photo"+photoEnCours2+".png");
+	
+		document.getElementById('scoreClick').innerHTML = compteurClick;
+	}
+	
+	function changeBorder(id,couleur)
+	{
+		document.getElementById(id).style.border = "2px solid "+couleur;
+	}
+	var countClick=30;
+ //1000 will  run it every 1 second
+	function timingClick()
+	{
+  		countClick=countClick-1;
+  		if (count <= -1)
+  	{
+    	 clearInterval(counter);
+     //counter ended, do something here
+     	return;
+  	}
+  	loopClick();
+  //Do code for showing the number of seconds here
+}
+	
+	// ----------------------// 
+	
+	var operatoir = ['+','-','*'];
+	var bool = false;
+	
+	
+	function randomNombre()
+	{
+		var nb1 = Math.floor((Math.random() * 50)+1);
+		var nb2 = Math.floor((Math.random() * 50)+1);
+		var nb3;
+		var operatoirIndex = Math.floor((Math.random() * 3)+1)-1;
+		var choix =  Math.floor((Math.random() * 2)+1)-1;
+		document.getElementById('premierNB').innerHTML = nb1;
+		document.getElementById('deuxiemeNB').innerHTML = nb2;
+		var ope = operatoir[operatoirIndex];
+		document.getElementById('operation').innerHTML = ope;
+		if(choix == 1)
+		{
+			 nb3 = Math.floor((Math.random() * 50)+1);
+		}
+		else
+		{
+			
+			switch(ope)
+			{
+			case '+':
+				nb3 = nb1+nb2;
+				break;
+			case '-':
+				nb3 = nb1-nb2;
+				break;
+			case '*':
+				nb3 = nb1*nb2;
+				break;
+			}
+		}
+		document.getElementById('resultat').innerHTML = nb3;
+		
+		switch(ope)
+			{
+			case '+':
+				bool = (nb3 == nb1+nb2);
+				break;
+			case '-':
+				bool = (nb3 == nb1-nb2);
+				break;
+			case '*':
+				bool = (nb3 == nb1*nb2);
+				break;
+			}
+		
+	}
+	
+	function calculResult(valeur)
+	{
+		var couleur;
+		if(valeur)
+		{
+			couleur = 'green';
+		}
+		else
+		{
+			couleur = 'red';
+		}
+		document.getElementById('calcul').style.border = "2px solid "+couleur;
+	}
+	
+	function toucheBool(valeurLocal)
+	{
+		if(valeurLocal == bool)
+		{
+			calculResult(true);
+		}
+		else
+		{
+			calculResult(false);
+		}
+		randomNombre();
+	}
+	
+	function tempsRestant()
+	{
+		var tempsDepart = new Date().getTime();
+		var chrono = new Date().getTime();
+		document.getElementById('timingCalul').innerHTML = chrono/1000 + 'Secondes';
+		while(chrono < tempsDepart + 30000)
+		{
+		if(chrono % 5000 == 0)
+		{
+			document.getElementById('timingCalul').innerHTML = chrono/1000 + 'Secondes';
+		}
+		chrono = tempsDepart -  new Date().getTime();
+		}
+	}
+	// -- Partie CANVAS -- // 
+	var tableauMOT=["bonjour","javascript","blabla","arthur","html","css","normandie","esilv"];
+	var stockageValueInput = "";
+	var stockMot ="";
+	var compteurBonneReponse = 0;
+	var compteurMauvaiseReponse = 0;
+	function randomMot()
+	{
+		var indexMot = Math.floor((Math.random() * tableauMOT.length)+1)-1;
+		stockMot = tableauMOT[indexMot];
+		document.getElementById('motAtapper').innerHTML=stockMot;			
+	}
+	document.onkeyup=function (e)
+	{
+    	e=e || window.event;
+    	var code=e.keyCode || e.wihch;
+    	var valeurInput  = document.getElementById("entreeClavier");
+    	if(code == 13  && valeurInput.value != "" && count >= 0)
+		{
+			stockageValueInput = valeurInput.value;		
+			valeurInput.value ="";
+			if(stockageValueInput == stockMot)
+			{
+				compteurBonneReponse++;
+			}
+			else
+			{
+				compteurMauvaiseReponse++;
+			}
+			document.getElementById('bonneRep').innerHTML = compteurBonneReponse;
+			randomMot();
+		}
+	};
+	function timerClavierFCT()
+	{
+		var tempsDepart = new Date().getTime();
+		var chrono = new Date().getTime();
+		
+		while(chrono < tempsDepart + 1000)
+		{
+		
+		document.getElementById('timerClavier').innerHTML = chrono/1000 + 'Secondes';
+		pausecomp(100);
+		}
+	}
+var count=30;
+ //1000 will  run it every 1 second
+function timer()
+{
+  count=count-1;
+  if (count <= -1)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+     return;
+  }
+  document.getElementById('timerClavier').innerHTML = count+' Secondes';
+  prochaineEtape();
+  //Do code for showing the number of seconds here
+}
+	// ---- PARTIE TABLEAU CHIFFRE ---- //
+	var arrayChiffre = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+	
+	function melange()
+	{
+		var tabRef = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+		for(var j=0;j<16;j++)
+		{
+			var alea = Math.floor(Math.random() * (16-j))+j;
+			var local = tabRef[j];
+			tabRef[j] = tabRef[alea];
+			tabRef[alea] = local;
+		}
+		return tabRef;
+	}
+	
+	var tabEnCours = new Array(16);
+	var enMarche = false;
+	
+	function generateurTableau()
+	{
+		if(!enMarche)
+		{
+		setInterval(timerRef,1000);
+		tabEnCours = melange();
+		var tableVal = tabEnCours;
+		var tab = document.getElementById("tableauChiffre");
+		var table = document.createElement('table');
+		table.setAttribute('style','border :1px solid #000000; font-size:500%;');
+		for(var i=0;i<4;i++)
+		{
+			var table_row = document.createElement('tr');
+			for(var j=0;j<4;j++)
+			{
+				var table_data  = document.createElement('td');
+				var rang = (i*4)+j;
+				if(rang < 10 ) { rang = '0'+rang;}
+				table_data.setAttribute('style','border : solid 1px #000000;');
+				table_data.setAttribute('id','tab'+rang);
+				table_data.setAttribute('onclick','clickRetourne(this.id)');
+				var enplus = "";
+				if(tableVal[(i*4)+j] < 10)
+				{
+					enplus="0";
+				}
+				table_data.innerHTML = enplus+tableVal[(i*4)+j];
+				table_row.appendChild(table_data);
+			
+			}
+			table.appendChild(table_row);
+		}
+		document.querySelector('#tableauChiffre').appendChild(table);
+		enMarche = true;
+		}
+		}
+		
+		function generateurTableauVide()
+		{
+		if(enMarche)
+		{
+		var table = document.createElement('table');
+		table.setAttribute('style','border :1px solid #000000; font-size:500%;');
+		for(var i=0;i<4;i++)
+		{
+			var table_row = document.createElement('tr');
+			for(var j=0;j<4;j++)
+			{
+				var table_data  = document.createElement('td');
+				table_data.setAttribute('style','border : solid 1px #000000');
+				table_data.innerHTML = '00';
+				table_row.appendChild(table_data);
+			
+			}
+			table.appendChild(table_row);
+		}
+		document.querySelector('#tableauChiffre').appendChild(table);
+		enMarche = false;
+		}
+	 }
+	 
+	 var caseVideFait = false;
+	 function caseVide()
+	 {
+		if(!caseVideFait)
+		{
+		for(var i=0;i<16;i++)
+		{
+			var rang=i;
+			if(i<10){rang = '0'+rang;}
+			document.getElementById('tab'+rang).innerHTML = '##';
+		}
+		enMarche = false;
+		caseVideFait = true;
+		}
+	}
+	
+	var counterClickRef = 1;
+	var tableauResult = new Array(16);
+	var caRoule = true;
+	
+	function clickRetourne(id)
+	{
+	
+	if(caRoule)
+		{
+		var compteLocal = counterClickRef;
+		if(compteLocal <10){compteLocal = '0'+compteLocal;}
+		document.getElementById(id).innerHTML = compteLocal;
+		
+		
+		
+		var pos = id[4];
+		if(id[3] == '1'){pos = '1' + pos;}
+		console.log(pos);
+		
+		tableauResult[counterClickRef - 1] = (tabEnCours[pos] == counterClickRef);
+		
+		console.log("idtab" + tabEnCours[pos]);
+		console.log("result "+tableauResult[counterClickRef - 1]);
+		caRoule = tableauResult[counterClickRef - 1];
+		if(caRoule)
+		{
+			document.getElementById('scoreRefle').innerHTML = counterClickRef;
+		}
+		resultatTab(caRoule,id);
+		counterClickRef++; 
+		}
+		
+		
+	}
+	
+	
+	function resultatTab(bool,id)
+	{
+		var id_ = document.getElementById(id);
+		var couleur = 'red';
+		if(bool){couleur = 'green';}
+		id_.style.border = "2px solid "+couleur;
+	}
+	
+	
+	var countRef=10;
+	function timerRef()
+	{
+	countRef=countRef-1;
+	if (countRef <= -1)
+		{
+		caseVide();
+		//clearInterval(counter);
+		return;
+		}
+	document.getElementById('timerRefiD').innerHTML = countRef + ' Secondes';
+	}
+		
+	</script>
+	</body>
+
+	
+</html>

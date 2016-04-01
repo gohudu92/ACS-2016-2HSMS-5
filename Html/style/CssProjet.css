@@ -6,12 +6,16 @@
 			background-color:rgb(200,200,200);
 		}
 
-		nav
+	p 	{
+			text-align:justify;
+		}
+	
+	nav
 		{
 			
 		}
-
-		.nono
+		
+	.off
 		{
 			color: black;
 		}
@@ -24,11 +28,6 @@
 		font-size: 16px;
 		margin-left: 10%;
 	}
-	
-	.taille
-	{
-		height : 580px;
-	}
 
 	h1	{
 			background-color:rgb(225, 190, 50);
@@ -39,15 +38,15 @@
 			border-radius: 25px 25px 25px 25px;
 		}
 
-	ul#menu a {
-				background-color: rgb(120, 170, 255);
-				color: white;
+	ul a {
+				background-color:rgb(225, 190, 50);
+				/*color: white;
 				padding: 10px;
 				margin: 3%;
 				text-decoration: none;
 				border-radius: 5px 5px 5px 5px;
 				font-family: "Lucida Handwriting";
-				font-weight:bold;
+				font-weight:bold;*/
 			}
 			
 	footer {
@@ -94,7 +93,7 @@
 			
 	.mosaique{
 				float:right;
-				height: 410px;
+				height: 406px;
 				width: 490px;
 				margin: 5px 5px 5px 5px;
 			}
@@ -112,4 +111,3 @@
 			padding-left : 0px;
 			padding-right : 0px;
 	}
-	

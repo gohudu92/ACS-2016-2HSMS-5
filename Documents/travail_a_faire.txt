@@ -1,0 +1,24 @@
+# Travail à faire pour le 20/03
+
+* TOUS : Proposition de Jeux
+	 Se mettre sur la liste des jeux que vous réalisez, ou que vous avez réalisés
+
+* HPo : Mettre Mosaïque (dossier page accueil) + Jeux (dossier Jeux) sur le Git
+	Incorporer la Mosaïque sur l’HTML de référence
+	Mettre un jeu par dossier dans le dossier “Jeux” avec un fichier txt comme ‘exemple’
+
+* HPi :	Compte-utilisateur : page de création de compte : relier à une base de donnée
+	BDD design
+	Choix Techonlogie C/S (attendre prochain amphi)	
+
+* MP : Retravailler les 4 pages HTML (division titre, organisation, footer liens)
+
+* SS : Choix : 	Des Images de fonds
+		Placement organisation de la page avec MP
+		Les couleurs
+		Adaptation, mise en place
+		Banière titre
+
+* SP : 	Ajout du système de points sur les jeux
+	Relier Système de points base de donnée
+	Incorporer les Jeux sur le site
