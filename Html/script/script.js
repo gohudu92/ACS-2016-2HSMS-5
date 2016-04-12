@@ -61,6 +61,8 @@ var countTIM = 30;
 //var counter = setInterval(timerCount,1000);
 var counter = setInterval(prochaineEtape,5000);
 
+System.getProperty("line.separator");
+
 function creer_mosaique() {
 	var j;
 	for (j=1 ; j<=3;j++)

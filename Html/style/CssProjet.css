@@ -3,7 +3,7 @@
 			height : 100%;
 			width : 100%;
 			margin: 0px;
-			background-color:rgb(200,200,200);
+			background-color:rgb(250,250,250);
 		}
 
 	p 	{
@@ -12,6 +12,11 @@
 	
 	nav
 		{
+		    width:100%;
+			height:60px;
+			background-image:radial-gradient(#A3B9C9,black );
+			
+			background-repeat: no-repeat;
 			
 		}
 		
@@ -27,19 +32,28 @@
 	{
 		font-size: 16px;
 		margin-left: 10%;
+		
 	}
 
 	h1	{
-			background-color:rgb(225, 190, 50);
-			color:rgb(235, 40, 120);
+			background-color: black;
+			font-weight: 800;
+			height:150px;
+			font-family:impact;
+			color:#A3B9C9;
 			text-align : center;
-			padding: 20px;
-			margin: 20.440px 5px 20.440px 5px;
+			padding: 35px;
+			font-family: Times New Roman ;
 			border-radius: 25px 25px 25px 25px;
-		}
+			margin: 10px,10px,10px,10px;
+			background-image: url(images.jpg);
+			background-repeat: no-repeat;
+			
+			
+			}
 
 	ul a {
-				background-color:rgb(225, 190, 50);
+				background-color:#FF8000;
 				/*color: white;
 				padding: 10px;
 				margin: 3%;
@@ -50,37 +64,48 @@
 			}
 			
 	footer {
-			background-color:rgb(150, 150, 150);
+			/*background-image:radial-gradient(#5858FA, white);*/
+			background-color: #A3B9C9;
+			font-family: Times New Roman ;
+			text-align : center;
+			padding: 35px;
 			color: black;
-			font-family: "Lucida Handwriting";
+			font-family: Lucidatypewriter;
 			text-align:center;
 			font-weight:bold;
 			clear:both;
-			border-top: 1px black solid;
-		}
+			height:70px;
+			border-radius: 25px 25px 25px 25px;
+			/*border-top: 1px black solid;*/		
+			background-image: url(facebook.jpg), url(mail.jpg), url(telephone.jpg), url(insta.jpg), url(twitter.png),radial-gradient(white, #A3B9C9);
+			background-repeat: no-repeat;
+			border-radius:0.001%, 0.01, 0.01%, 0.01%, 0.01%;	
+			background-position: 75%,85%, 95%,80%, 90%; 
+			}
 
 	.margeGauche {
 			float : left;
-			background-color:rgb(150, 150, 150);
+			background-color:rgb(255,255,255);
 			height: 435px;
-			width: 150px;
-			border-right: 1px black solid;
-			border-top: 1px black solid;
+			width: 265px;
+			border-right: 1px white solid;
+			border-top: 1px white solid;
 		}
 		
 	.margeDroite{
 			float : right;
-			background-color:rgb(150, 150, 150);
+			background-color:rgb(255,255,255);
 			height: 435px;
-			width: 150px;
-			border-left: 1px black solid;
-			border-top: 1px black solid;
+			width: 265px;
+			border-left: 1px white solid;
+			border-top: 1px white solid;
 		}
 	
 	.contenu {
+	            background-color: #F2F2F2;
 				float:left;
 				height: 424px;
-				width: 1039px;
+				width: 1360px;
 				margin: 5px 5px 5px 5px;
 			}
 			
@@ -99,6 +124,8 @@
 			}
 			
 	.description{
+	            position: absolute;
+
 				float:left;
 				height: 360px;
 				width: 529px;
