@@ -68,13 +68,13 @@
 			background-color: #A3B9C9;
 			font-family: Times New Roman ;
 			text-align : center;
-			padding: 35px;
+			padding: 5px;
 			color: black;
 			font-family: Lucidatypewriter;
 			text-align:center;
 			font-weight:bold;
 			clear:both;
-			height:70px;
+			height:40px;
 			border-radius: 25px 25px 25px 25px;
 			/*border-top: 1px black solid;*/		
 			background-image: url(facebook.jpg), url(mail.jpg), url(telephone.jpg), url(insta.jpg), url(twitter.png),radial-gradient(white, #A3B9C9);
@@ -105,8 +105,8 @@
 	            background-color: #F2F2F2;
 				float:left;
 				height: 424px;
-				width: 1360px;
-				margin: 5px 5px 5px 5px;
+				width: 98%;
+				margin: 5px 1% 5px 1%;
 			}
 			
 	.placementBouton{
@@ -120,7 +120,7 @@
 				float:right;
 				height: 406px;
 				width: 490px;
-				margin: 5px 5px 5px 5px;
+				margin: 5px 15% 5px 5px;
 			}
 			
 	.description{
@@ -129,7 +129,7 @@
 				float:left;
 				height: 360px;
 				width: 529px;
-				margin: 5px 5px 5px 5px;
+				margin: 5px 5px 5px 5%;
 			}
 			
 	.bouton {
