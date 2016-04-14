@@ -21,27 +21,27 @@ function table_navigation() {
 	var a = document.createElement('li');
 	a.setAttribute('role','presentation');
 	a.setAttribute('class','off');
-	a.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='style/maison_mod.png' style = 'width:40px;height:40px;'/>  Accueil</a>";
+	a.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='images/maison_mod.png' style = 'width:40px;height:40px;'/>  Accueil</a>";
 	
 	var b = document.createElement('li');
 	b.setAttribute('role','presentation');
 	b.setAttribute('class','off');
-	b.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='style/cle_mod.png' style = 'width:40px;height:40px;'/>Se Connecter</a>";
+	b.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='images/cle_mod.png' style = 'width:40px;height:40px;'/>Se Connecter</a>";
 	
 	var c = document.createElement('li');
 	c.setAttribute('role','presentation');
 	c.setAttribute('class','off');
-	c.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='style/bonhomme_mod.png' style = 'width:40px;height:40px;'/>Créer un compte</a>";
+	c.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='images/bonhomme_mod.png' style = 'width:40px;height:40px;'/>Créer un compte</a>";
 	
 	var d = document.createElement('li');
 	d.setAttribute('role','presentation');
 	d.setAttribute('class','off');
-	d.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='style/tete_mod.png' style = 'width:40px;height:40px;'/>Liste des Jeux</a>";
+	d.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='images/tete_mod.png' style = 'width:40px;height:40px;'/>Liste des Jeux</a>";
 	
 	var e = document.createElement('li');
 	e.setAttribute('role','presentation');
 	e.setAttribute('class','off');
-	e.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='style/lampe_mod.png' style = 'width:40px;height:40px;'/>Informations</a>";
+	e.innerHTML = "<a href='index.html' style='color:white;font-size:100%;'> <img src='images/lampe_mod.png' style = 'width:40px;height:40px;'/>Informations</a>";
 	
 	if(page =='index') a.setAttribute('class','active');
 	if(page =='connexion') b.setAttribute('class','active');
