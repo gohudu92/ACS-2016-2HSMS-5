@@ -1,13 +1,14 @@
 	body {
 			font-family: "Times New Roman";
-			height : 100%;
+			height : 95%;
 			width : 100%;
 			margin: 0px;
-			background-color:rgb(250,250,250);
+			background-color:#ff8c66;
 		}
 
 	p 	{
 			text-align:justify;
+			font-size: 20px;
 		}
 	
 	nav
@@ -15,7 +16,6 @@
 		    width:100%;
 			height:60px;
 			background-image:radial-gradient(#A3B9C9,black );
-			
 			background-repeat: no-repeat;
 			
 		}
@@ -31,20 +31,20 @@
 	.nav-pills
 	{
 		font-size: 16px;
-		margin-left: 10%;
+		/* margin-left: 5%; */
 		
 	}
 
 	h1	{
 			background-color: black;
 			font-weight: 800;
-			height:150px;
+			height:80px;
 			font-family:impact;
-			color:#A3B9C9;
+			color:#cce6ff;
 			text-align : center;
-			padding: 35px;
+			padding: 20px;
 			font-family: Times New Roman ;
-			border-radius: 25px 25px 25px 25px;
+			/* border-radius: 25px 25px 25px 25px; */
 			margin: 10px,10px,10px,10px;
 			background-image: url(images.jpg);
 			background-repeat: no-repeat;
@@ -64,6 +64,7 @@
 			}
 			
 	footer {
+	
 			/*background-image:radial-gradient(#5858FA, white);*/
 			background-color: #A3B9C9;
 			font-family: Times New Roman ;
@@ -74,14 +75,16 @@
 			text-align:center;
 			font-weight:bold;
 			clear:both;
-			height:40px;
-			border-radius: 25px 25px 25px 25px;
+			height:50px;
+			/* border-radius: 25px 25px 25px 25px; */
 			/*border-top: 1px black solid;*/		
-			background-image: url(facebook.jpg), url(mail.jpg), url(telephone.jpg), url(insta.jpg), url(twitter.png),radial-gradient(white, #A3B9C9);
+			/*background-image: url(facebook.jpg), url(mail.png), url(telephone.png), url(insta.jpg), url(twitter.png),radial-gradient(white, #A3B9C9);*/
 			background-repeat: no-repeat;
+			
 			border-radius:0.001%, 0.01, 0.01%, 0.01%, 0.01%;	
 			background-position: 75%,85%, 95%,80%, 90%; 
 			}
+		
 
 	.margeGauche {
 			float : left;
@@ -102,11 +105,12 @@
 		}
 	
 	.contenu {
-	            background-color: #F2F2F2;
+	            background-color:	#b3ff66;
 				float:left;
 				height: 424px;
-				width: 98%;
-				margin: 5px 1% 5px 1%;
+				width: 1360px;
+				margin: 5px 5px 5px 5px;
+				border-radius : 20px;
 			}
 			
 	.placementBouton{
@@ -120,7 +124,7 @@
 				float:right;
 				height: 406px;
 				width: 490px;
-				margin: 5px 15% 5px 5px;
+				margin: 5px 10% 5px 5px;
 			}
 			
 	.description{
