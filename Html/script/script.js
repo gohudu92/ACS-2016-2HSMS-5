@@ -103,7 +103,7 @@ function creer_mosaique() {
 	for(i=0 ; i<nombreL;i++)
 	{
 		var num = i+4*(j-1)	;
-		flow.innerHTML += "<img id='"+j+"imgMosa"+i+"' src='images/photo"+num+".png' onmouseover='jeSuisDessu(this.id)' onmouseleave='jeSuisDessu(this.id)' onclick='' style='width:200px;height:120px;'>";
+		flow.innerHTML += "<img id='"+j+"imgMosa"+i+"' src='images/photo"+num+".png' onmouseover='jeSuisDessu(this.id)' onmouseleave='jeSuisDessu(this.id)' onclick='clickLien("+(num-1)+")' style='width:200px;height:120px;'>";
 	}
 	document.querySelector('.mosaique').appendChild(flow);
 	}
