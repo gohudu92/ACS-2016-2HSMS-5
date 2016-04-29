@@ -1,0 +1,59 @@
+img {
+	width:100%;
+	height:16.745%;
+	padding:5px;
+}
+
+#mosaique
+{
+	/*width:440;
+	height:900;*/
+	border:solid 2px black;
+}
+
+#memo
+{
+	width:584;
+	height:600;
+	border:solid 2px black;
+}
+
+
+.colonne 
+{
+	float:left;	
+	/*width:145px;*/
+	width:33.33%;
+	height:100%;
+}
+
+
+
+#imageAtrouver
+{
+	display:flex;
+	width:150px;
+	height:150px;
+	margin: auto;
+}
+
+
+
+#ZoneJoueur
+{
+	display:flex;
+	float:left;	
+	margin-left : 50px;
+	border:2px solid black;
+}
+
+#calcul
+{
+	display:flex;
+}
+
+
+#motAttaper
+{
+	left:50px;
+}

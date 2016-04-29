@@ -5,41 +5,42 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="style/CssProjet.css">
 		<link rel="stylesheet" type="text/css" href="style/CssJeux.css">
-		<style type="text/css">a:link{text-decoration:none}</style>
+		<style type="text/css">a:link{text-decoration:none} </style> 
 	</head>
 	
-	<body>
+	<body onload = "creer_mosaique();description_site();">
 		<div>
 		
 			<div id="titre">
-				<a href="index.html"> <h1>CerveauTraining</h1> </a>
+				<a href="index.html"> <h1>#CerveauTraining</h1></a>
 			</div>
 			
-			<hr> </hr>
+			
 			<div id="navigation">
 				<nav> <ul class="nav nav-pills" id="table_navigation"> </ul> </nav>
 			</div>
-			<hr> </hr>
-		
-			<aside class="margeGauche"> </aside>
-			<aside class="margeDroite">	</aside>
-				
+			
 			<div class="contenu">
-				<div class= "placementBouton">
-					<p> Zone boutons </p>
-				</div>
 		
-			<div class="mosaique" id="mosaique"> </div>
-		
-				<div class="description">
-					<h3>Description</h3>
-					<p class="description_jeu"> </p>
-				</div>
+			<div id="zone_texte" class="description">
+				<h3 style='color:black;background-color:#ffff66;' id='titreArt'>Description</h3>
+				<p id='corp' class="description_jeu"> </p>
+			</div>
+            
+            <div align="top", class="mosaique" id="mosaique">
+			</div>    
+                
 			</div>
 		
 		</div>
 	
-		<footer> Copyright 2HSMS-5 2016 </footer>
+		<footer>
+		<p>Copyright 2HSMS-5 2016
+		<img src="images/facebook.jpg" style ="width:40px; height:40px;">
+		<img src="images/twitter.png" style ="width:40px; height:40px;">
+		<img src="images/insta.jpg" style ="width:40px; height:40px;">
+		<img src="images/mail.jpg" style ="width:40px; height:40px;">
+		</p></footer>
 		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
 		<script type="text/javascript" src="script/script.js"></script>
 		<script> page = 'informations'; table_navigation(); </script>

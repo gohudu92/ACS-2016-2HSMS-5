@@ -1,0 +1,118 @@
+<html lang fr-FR>
+	<head>	
+		<title> Projet 2HSMS-5 </title>
+		<meta charset = "UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.6-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../style/CssProjet.css">
+		<link rel="stylesheet" type="text/css" href="../style/CssJeux.css">
+		<style type="text/css">a:link{text-decoration:none} </style> 
+	</head>
+	
+		<body onload="description_jeu(3);pageJeux = true;table_navigation()">
+		<div>
+		
+			<div id="titre">
+				<a href="index.html"> <h1>#CerveauTraining</h1></a>
+			</div>
+			
+			
+			<div id="navigation">
+				<nav> <ul class="nav nav-pills" id="table_navigation"> </ul> </nav>
+			</div>
+			
+		
+		
+				
+	<div class="contenu">
+     <div id="frappeRapide" style="font-size:150%;border: 10px solid black;width:400px; float:right;margin-right:20%;height:100%;">
+     <button type="button" onclick="randomMot(),setInterval(timer, 1000)" style="color:black;font-size: 100%;  width:100% ;height :10%; margin: auto;background-color:black;color:white;">RUN</button> 
+			<p  id ="bonneRep" style="font-size: 100%; width:250px; text-align: center; border: 8px solid black;width:100px; margin-left: 5%;margin-top:10%;">SCORE</p>
+     <p  id ="timerClavier" style="font-size: 100%; width:250px; text-align: center; border: 8px solid black;width:100px; margin-left: 5%;">TIMER</p>
+     <p  id ="motAtapper" style="font-size: 300%;text-align: center;color : #ffff66;"> Texte </p>
+     <input type="text" name="fname" id="entreeClavier" style="font-size:200% ;height: 100px; width:100%;margin:auto;color:black" >
+
+     </div>
+	
+			
+		
+			<div align="down", class="description">
+				<h3 style='color:rgb(174,198,224);' id="titreGame">Description</h3>
+				<p class="description_jeu"> </p>
+			</div>
+			</div>
+		
+	
+	
+		<footer>
+		<p>Copyright 2HSMS-5 2016
+		<img src="images/facebook.jpg" style ="width:40px; height:40px;">
+		<img src="images/twitter.png" style ="width:40px; height:40px;">
+		<img src="images/insta.jpg" style ="width:40px; height:40px;">
+		<img src="images/mail.jpg" style ="width:40px; height:40px;">
+		</p></footer>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="../script/script.js"></script>
+		<script> page = 'index';</script>
+		<script>
+var tableauMOT=["bonjour","javascript","blabla","arthur","html","css","normandie","esilv"];
+	var stockageValueInput = "";
+	var stockMot ="";
+	var compteurBonneReponse = 0;
+	var compteurMauvaiseReponse = 0;
+	function randomMot()
+	{
+		var indexMot = Math.floor((Math.random() * tableauMOT.length)+1)-1;
+		stockMot = tableauMOT[indexMot];
+		document.getElementById('motAtapper').innerHTML=stockMot;			
+	}
+	document.onkeyup=function (e)
+	{
+    	e=e || window.event;
+    	var code=e.keyCode || e.wihch;
+    	var valeurInput  = document.getElementById("entreeClavier");
+    	if(code == 13  && valeurInput.value != "" && count >= 0)
+		{
+			stockageValueInput = valeurInput.value;		
+			valeurInput.value ="";
+			if(stockageValueInput == stockMot)
+			{
+				compteurBonneReponse++;
+			}
+			else
+			{
+				compteurMauvaiseReponse++;
+			}
+			document.getElementById('bonneRep').innerHTML = compteurBonneReponse;
+			randomMot();
+		}
+	};
+	function timerClavierFCT()
+	{
+		var tempsDepart = new Date().getTime();
+		var chrono = new Date().getTime();
+		
+		while(chrono < tempsDepart + 1000)
+		{
+		
+		document.getElementById('timerClavier').innerHTML = chrono/1000 + 'Secondes';
+		pausecomp(100);
+		}
+	}
+var count=30;
+ //1000 will  run it every 1 second
+function timer()
+{
+  count=count-1;
+  if (count <= -1)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+     return;
+  }
+  document.getElementById('timerClavier').innerHTML = count+' Secondes';
+  prochaineEtape();
+  //Do code for showing the number of seconds here
+}
+	</script>
+	</body>
+</html>

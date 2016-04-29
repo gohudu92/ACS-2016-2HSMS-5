@@ -5,26 +5,37 @@
 			min-height :328px;
 			min-width : 1349px;
 			margin: 0px;
-			background-color:#ff8c66;
+			background-image:url(../images/fond9.jpg);
+				/* background-repeat: no-repeat; */
+			/* background-color:#FFB347; */
 		}
 
 	p 	{
 			text-align:justify;
 			font-size: 20px;
 		}
+
+    #zone_texte {
+        border : 4px solid white;
+        padding:10px;
+        border-radius:0px 20px 0 20px;
+        }
 	
 	nav
 		{
 		    width:100%;
-			height:60px;
-			background-image:radial-gradient(#A3B9C9,black );
-			background-repeat: no-repeat;
-			
+			height:80px;
+			/* background-image:radial-gradient(#779ECB,black); */
+			background-image:url(../images/fond1_nav.jpg);
+			border:10px solid black;
+			/* background-repeat: no-repeat; */
+			opacity: 0.90;
 		}
 		
 	.off
 		{
 			color: black;
+			/*margin-right:80px;*/
 		}
 
 
@@ -48,8 +59,8 @@
 			font-family: Times New Roman ;
 			/* border-radius: 25px 25px 25px 25px; */
 			margin: 10px,10px,10px,10px;
-			background-image: url(images.jpg);
-			background-repeat: no-repeat;
+			background-image: url(../images/fond1_sup.jpg);
+			/* background-repeat: no-repeat; */
 			
 			
 			}
@@ -64,27 +75,30 @@
 				font-family: "Lucida Handwriting";
 				font-weight:bold;*/
 			}
+	
 			
 	footer {
 	
 			/*background-image:radial-gradient(#5858FA, white);*/
-			background-color: #A3B9C9;
+			/* background-color: #A3B9C9; */
 			font-family: Times New Roman ;
+			opacity: 0.80;
 			text-align : center;
 			padding: 5px;
-			color: black;
+			color: white;
 			font-family: Lucidatypewriter;
 			text-align:center;
 			font-weight:bold;
 			clear:both;
-			height:50px;
+			height:70px;
 			/* border-radius: 25px 25px 25px 25px; */
 			/*border-top: 1px black solid;*/		
 			/*background-image: url(facebook.jpg), url(mail.png), url(telephone.png), url(insta.jpg), url(twitter.png),radial-gradient(white, #A3B9C9);*/
+			background-image:url(../images/fond1_bas.jpg);
 			background-repeat: no-repeat;
-			
-			border-radius:0.001%, 0.01, 0.01%, 0.01%, 0.01%;	
-			background-position: 75%,85%, 95%,80%, 90%; 
+			margin-top : 50px; 
+			border:10px solid black;
+			/* background-position: 75%,85%, 95%,80%, 90%;  */
 			}
 		
 
@@ -107,14 +121,20 @@
 		}
 	
 	.contenu {
-	            background-color:	#b3ff66;
-				float:left;
-				height: 424px;
-				width: 1360px;
-				margin: 5px 5px 5px 5px;
-				border-radius : 20px;
+	            /* background-color:#779ECB; */
+				background-image:url(../images/fond1_mil.jpg);
+				opacity: 0.90;
+				/* float:left; */
+				margin-top : 3%;
+				height:500px;
+				width: 100%; 
+				color:white;
+				border : 10px solid black;
+				/* margin:auto */;
+				/* border-radius : 20px; */
 			}
-			
+	
+	
 	.placementBouton{
 						float:left;
 						height: 50px;
@@ -123,19 +143,22 @@
 					}
 			
 	.mosaique{
+				/* border:5px solid black; */
 				float:right;
-				height: 406px;
-				width: 490px;
-				margin: 5px 10% 5px 5px;
+				height: auto;
+				width: 410px;
+				margin: 0px 18% 5px 5px;
 			}
 			
-	.description{
-	            position: absolute;
 
+			
+	.description{
+	            /* position: absolute; */
 				float:left;
 				height: 360px;
 				width: 529px;
-				margin: 5px 5px 5px 5%;
+				margin:2% 5px 2% 20%;
+				color:#ffff66;
 			}
 			
 	.bouton {
@@ -144,3 +167,35 @@
 			padding-left : 0px;
 			padding-right : 0px;
 	}
+	
+	.pres_jeux
+	{
+		width:210px;
+		height:100%;
+		display:inline-block;
+		vertical-align:top;
+		border : 5px solid black;
+		margin-right:10px;
+
+	}
+	
+	.pres_jeux img
+	{
+		width:200px;
+		height:150px;
+	}
+	
+	.pres_jeux h4
+	{
+		text-align:center;
+		padding:5px;
+	}
+	
+	.pres_jeux p
+	{
+		color: yellow;
+		font-size:125%;
+	
+	}
+	
+	

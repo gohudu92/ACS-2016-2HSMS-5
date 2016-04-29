@@ -12,36 +12,76 @@
 		<div>
 		
 			<div id="titre">
-				<a href="index.html"> <h1>CerveauTraining</h1> </a>
+				<a href="index.html"> <h1>#CerveauTraining</h1> </a>
 			</div>
 			
-			<hr> </hr>
+			
 			<div id="navigation">
 				<nav> <ul class="nav nav-pills" id="table_navigation"> </ul> </nav>
 			</div>
-			<hr> </hr>
 		
-			<aside class="margeGauche"> </aside>
-			<aside class="margeDroite">	</aside>
+		
 				
 			<div class="contenu">
-				<div class= "placementBouton">
-					<p> Zone boutons </p>
+				<div class='pres_jeux'>
+				<a href="pages_jeux/4images1mot.html"><img src='images/photo1.png' id='jeu1' onmouseover = 'dessus(this.id)'></a>
+				<h4> 4 images 1 mot </h4>
+				<p> Nous sommes inspiré du célèbre jeu 4 images 1 mot,où tu dois deviner ... l'étudiant du groupe G.</p>
 				</div>
-		
-			<div class="mosaique" id="mosaique"> </div>
-		
-				<div class="description">
-					<h3>Description</h3>
-					<p class="description_jeu"> </p>
+				<div class='pres_jeux'  >
+				<a href="pages_jeux/memo.html"><img src='images/photo2.png' id='jeu2' onmouseover = 'dessus(this.id)'></a>
+				<h4> Memo </h4>
+				<p> Un grand classique mais bien utile pour tester ta mémoire !!</p>
 				</div>
-			</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/clickRapide.html"><img src='images/photo3.png' id='jeu3' onmouseover = 'dessus(this.id)'></a>
+				<h4> Click Rapide</h4>
+				<p> le principe est simple quand tu vois le rouge apparaître tu click sur la barre rouge, Attention point négatif si tu dérapes !</p>
+				</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/FastAndWrite.html"><img src='images/photo4.png' id='jeu4' onmouseover = 'dessus(this.id)'></a>
+				<h4> Fast And Write </h4>
+				<p> On m'a dit que tu écrivais à la vitesse de la lumière quand il s'agit de trouver une réponse pour le quizz de tranfert thermique, montre nous tes capacités</p>
+				</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/flecheEvo.html"><img src='images/photo5.png' id='jeu5' onmouseover = 'dessus(this.id)'></a>
+				<h4> Une couleur, Une porte</h4>
+				<p>le principe ? facile tu utilises les flêches du clavier pour une translation horizontale, et passe par la bonne porte</p>
+				</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/calculMentale.html"><img src='images/photo6.png' id='jeu6' onmouseover = 'dessus(this.id)'></a>
+				<h4> Calcul mental </h4>
+				<p> Ca prend sa calculette pour faire 2+2 en partiel, entraine toi ici !</p>
+				</div>
+				<div class='pres_jeux'>
+				<a href="pages_jeux/grilleMemo.html"><img src='images/photo7.png' id='jeu7' onmouseover = 'dessus(this.id)'></a>
+				<h4> Souviens toi ! </h4>
+				<p> 10 secondes pour se rappeller de l'ordre de 16 chiffres, seras-tu les retrouver dans le bon ordre! good luck !</p>
+				</div>
+				<img src='images/photo1.png' id='photoSelect' class="pres_jeux" style='width:300px;'>
 		
 		</div>
 	
-		<footer> Copyright 2HSMS-5 2016 </footer>
+		<footer>
+		<p>Copyright 2HSMS-5 2016
+		<img src="images/facebook.jpg" style ="width:40px; height:40px;">
+		<img src="images/twitter.png" style ="width:40px; height:40px;">
+		<img src="images/insta.jpg" style ="width:40px; height:40px;">
+		<img src="images/mail.jpg" style ="width:40px; height:40px;">
+		</p></footer>
 		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
 		<script type="text/javascript" src="script/script.js"> </script>
 		<script> page = 'liste_jeux'; table_navigation(); </script>
+		<script>
+		
+		var imageActu = 'images/photo1.png';
+		function dessus(id)
+		{
+			imageActu = document.getElementById(id).src;
+			document.getElementById('photoSelect').src = imageActu;
+		}
+		
+		
+		</script>
 	</body>
 </html>

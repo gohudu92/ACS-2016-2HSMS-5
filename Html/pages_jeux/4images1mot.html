@@ -1,0 +1,213 @@
+<html lang fr-FR>
+	<head>	
+		<title> Projet 2HSMS-5 </title>
+		<meta charset = "UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.6-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../style/CssProjet.css">
+		<link rel="stylesheet" type="text/css" href="../style/CssJeux.css">
+		<style type="text/css">a:link{text-decoration:none} </style> 
+	</head>
+		<body onload="description_jeu(0);pageJeux = true;table_navigation();">
+		<div>
+		
+			<div id="titre">
+				<a href="index.html"> <h1>#CerveauTraining</h1></a>
+			</div>
+			
+			
+			<div id="navigation">
+				<nav> <ul class="nav nav-pills" id="table_navigation"> </ul> </nav>
+			</div>
+			
+		
+		
+				
+			<div class="contenu">
+			
+			<div align="top", class="mosaique" id="zone" style="width:340px;border :10px solid #33ccff;padding:5px;border-radius: 25px;"> 
+				<img id="ph1" src='img/photo1.png' style="width:150px;height:150px;">
+				<img id="ph2" src='img/photo2.png' style="width:150px;height:150px;">
+				<img id="ph3" src='img/photo3.png' style="width:150px;height:150px;">
+				<img id="ph4" src='img/photo4.png' style="width:150px;height:150px;">
+				<div id="reponse" style="font-size:150%;text-align:center; border:1px solid black;background:#33ccff;"> REPONSE </div>
+		<table border="1" style="margin:auto;margin-top:5px;text-align:center;font-size:200%;overflow:auto;background:#33ccff;color:white">
+		<tr>
+		<td id="1" onclick="writes(this.id);"style="width:50px;">A</td>
+		<td id="2" onclick="writes(this.id);"style="width:50px;">B</td> 
+		<td id="3" onclick="writes(this.id);"style="width:50px;">C</td>
+		<td id="4" onclick="writes(this.id);"style="width:50px;">D</td>
+		<td id="5" onclick="writes(this.id);" style="width:50px;">E</td>
+		</tr>
+		<tr>
+		<td id="6" onclick="writes(this.id);">F</td>
+		<td id="7" onclick="writes(this.id);">G</td> 
+		<td id="8" onclick="writes(this.id);">H</td>
+		<td id="9" onclick="writes(this.id);">I</td>
+		<td id="10" onclick="writes(this.id);">J</td>
+		</tr>
+		</table>
+		<button type="button" onclick="launchGame();" style="margin-top:2px;margin-left :90px;background:grey;color:white">RUN</button>
+		<button type="button" onclick="reset();" style="background:grey;color:white;">RESET</button>
+		</div>
+			
+		
+			<div align="down", class="description">
+				<h3 style='color:rgb(174,198,224);' id="titreGame">Description</h3>
+				<p class="description_jeu"> </p>
+			</div>
+			</div>
+		
+	
+	
+		<footer>
+		<p>Copyright 2HSMS-5 2016
+		<img src="images/facebook.jpg" style ="width:40px; height:40px;">
+		<img src="images/twitter.png" style ="width:40px; height:40px;">
+		<img src="images/insta.jpg" style ="width:40px; height:40px;">
+		<img src="images/mail.jpg" style ="width:40px; height:40px;">
+		</p></footer>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="../script/script.js"></script>
+		<script> page = 'index';  </script>
+		<script>
+	var saveLettre =[];
+	var repEnCours = "";
+	var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+	var imageTab = [['marion1.jpg','marion2.jpg','marion3.jpg','marion4.png'],['tancrede1.jpg','tancrede2.jpg','tancrede3.jpg','tancrede4.jpg'],['guillaume1.jpg','guillaume2.jpg','guillaume3.png','guillaume4.png'],['lucas1.jpg','lucas2.jpg','lucas3.jpg','lucas4.jpg'],['hugo1.jpg','hugo2.jpg','hugo3.jpg','hugo4.jpg'],['ulysse1.png','ulysse2.png','ulysse3.png','ulysse4.png'],['omar1.jpg','omar2.jpg','omar3.png','omar4.png'],['jeremy1.png','jeremy2.png','jeremy3.png','jeremy4.png'],['quentin1.png','quentin2.png','quentin3.png','quentin4.png'],['alexandre1.png','alexandre2.png','alexandre3.png','alexandre4.png'],['baptiste1.png','baptiste2.png','baptiste3.png','baptiste4.png'],['bruno1.png','bruno2.png','bruno3.png','bruno4.png'],['antoine1.jpg','antoine2.png','antoine3.png','antoine4.png'],['coline1.png','coline2.png','coline3.png','coline4.png']];
+	var reponseTab = ['MARION','TANCREDE','GUILLAUME','LUCAS','HUGO','ULYSSE','OMAR','JEREMY','QUENTIN','ALEXANDRE','BAPTISTE','BRUNO','ANTOINE','COLINE']; 	
+	var reponse;
+	var first = true;
+	var indexG = 0;
+	
+	
+	function melangeTab()
+	{
+		for(var i=0;i<8;i++)
+		{
+			var indexT1 = Math.floor((Math.random() * reponseTab.length));
+			var indexT2 = Math.floor((Math.random() * reponseTab.length));
+			while(indexT1 == indexT2)
+			{
+				indexT2 = Math.floor((Math.random() * reponseTab.length));
+			}
+			var localimg = imageTab[indexT1];
+			imageTab[indexT1] = imageTab[indexT2];
+			imageTab[indexT2] = localimg;
+			
+			var localRep = reponseTab[indexT1];
+			reponseTab[indexT1] = reponseTab[indexT2];
+			reponseTab[indexT2] = localRep;
+			
+		}
+	}
+	
+	
+	
+	function reset()
+	{
+	    repEnCours = "";
+		document.getElementById("reponse").innerHTML = "";
+		for(var i=1;i<saveLettre.length+1;i++)
+		{
+			document.getElementById(i).innerHTML = saveLettre[i-1];
+		}
+		for(var i=0;i<reponse.length;i++)
+		{
+			document.getElementById("reponse").innerHTML += "_ ";
+		}
+	}
+	
+	function launchGame()
+	{
+		if(first){melangeTab();setLettre();first = false;}
+	}
+	
+	
+	function setLettre()
+	{
+		repEnCours = "";
+		reponse = reponseTab[indexG];
+		saveLettre =[]
+		for(var i=0;i<4;i++)
+		{
+			var pos = i+1
+			document.getElementById('ph'+pos).src = 'img/'+imageTab[indexG][i];
+		}
+		document.getElementById("reponse").innerHTML = "";
+		for(var i=1;i<11;i++)
+		{
+			document.getElementById(i).innerHTML = 0;
+		}
+		for(var i=0;i<reponse.length;i++)
+		{
+			var index = Math.floor((Math.random() * 10)+1);
+			console.log(index);
+			while(document.getElementById(index).innerHTML != 0)
+			{
+				index = Math.floor((Math.random() * 10)+1);
+			}
+			document.getElementById(index).innerHTML = reponse[i];
+			document.getElementById("reponse").innerHTML += "_ ";
+		}
+		for(var i=1;i<11;i++)
+		{
+			if(document.getElementById(i).innerHTML == 0)
+			{
+				var index = Math.floor((Math.random() * 26));
+				document.getElementById(i).innerHTML = alpha[index];
+			}
+			saveLettre[i-1] = document.getElementById(i).innerHTML;
+		}
+		
+	}
+	
+	function writes(id)
+	{
+	if( document.getElementById(id).innerHTML != '/')
+	{
+		var lettre = document.getElementById(id).innerHTML;
+		document.getElementById(id).innerHTML = "/";
+		document.getElementById("reponse").innerHTML = "";
+		repEnCours += lettre;
+		for(var i=0;i<reponse.length;i++)
+		{
+			if(i <repEnCours.length)
+			{
+				document.getElementById("reponse").innerHTML += repEnCours[i];
+			}
+			else
+			{
+				document.getElementById("reponse").innerHTML += " _";
+			}
+		}
+		if(repEnCours.length == reponse.length)
+		{
+			if(reponse == repEnCours)
+			{
+				if(indexG < reponseTab.length - 1)
+				{
+					indexG++;
+					setLettre();
+				}
+				else
+				{
+					document.getElementById("reponse").innerHTML = "FIN";
+					indexG=0;
+					first = false;
+						for(var i=0;i<4;i++)
+					{
+					var pos = i+1
+					document.getElementById('ph'+pos).src = 'img/photo0.png';
+					}
+				}
+			}
+			else
+			{
+				document.getElementById("zone").style.border = "10px solid red";
+			}
+		}
+	}
+	}	
+	</script>
+	</body>
+</html>
