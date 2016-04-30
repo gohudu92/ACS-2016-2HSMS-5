@@ -1,7 +1,7 @@
 // variables
 var page= 'aucune';
 var pageJeux = false;
-var infoJeu = [['4 images 1 mot',"Nous sommes inspiré du célèbre jeu 4 images 1 mot,où tu dois deviner ... l'étudiant du groupe G","4images1mot.html"],['Memo',"Un grand classique mais bien utile pour tester ta mémoire !!","memo.html"],["Click Rapide","le principe est simple quand tu vois le rouge apparaître tu click sur la barre rouge, Attention point négatif si tu dérapes !","clickRapide.html"],["Fast And Write","On m'a dit que tu écrivais à la vitesse de la lumière quand il s'agit de trouver une réponse pour le quizz de tranfert thermique, montre nous tes capacités","FastAndWrite.html"],["Une couleur, Une porte","le principe ? facile tu utilises les flêches du clavier pour une translation horizontale, et passe par la bonne porte","flecheEvo.html"],["Calcul mental","Ca prend sa calculette pour faire 2+2 en partiel, entraine toi ici !","calculMentale.html"],["Souviens toi !","10 secondes pour se rappeller de l'ordre de 16 chiffres, seras-tu les retrouver dans le bon ordre! good luck !","grilleMemo.html"]];
+var infoJeu = [['4 images 1 mot',"C'est l'équivalent du célèbre jeu 4 images 1 mot mais revisité selon notre TD G! Regardez les 4 images, et décelez ce qu'elles ont en commun !!  Découvrez pourquoi tout le monde va adorer ce jeu !!","4images1mot.html"],['Memo',"Le Grand classique des jeux de réflexion par excellence.Le Principe reste le même: s'entrainer à mémoriser les emplacements des différentes cartes de couleurs.Retournes les cartes et trouves un maximum de paires en un minimum de temps!Seul bémol: tu peux avoir une plus grande mémoire en l'exercant régulièrement.","memo.html"],["Click Rapide","Tu crois connaitre tes couleurs ? Tu as peut-être eu l'impression d'être rapide lors du quizz en base de donnée.Voyons voir si tout ca est bien vrai !Appuies sur la case rouge à chaque fois q'elle apparaît .. Mais attention trompes toi de couleurs et tes points seront négatifs!!","clickRapide.html"],["Fast And Write","On m'a dit que à l'Esilv à force de toucher le clavier touts les étudiants écrivaient à la vitesse de la lumière.J'aimerai bien voir ça!1 mot un clavier et à toi de jouer ! Écris le plus de mots en moins de temps possibl!","FastAndWrite.html"],["Une couleur, Une porte","Aides toi des touches du clavier et passes les portes selon les bonnes couleurs.Jeux de rapidité et de couleurs. Voyons voir si tu es capable d'associer couleurs et rapidité !","flecheEvo.html"],["Calcul mental","Ca prend sa calculette pour faire 2+2 en partiel, entraine toi ici ! Grâce à ce jeu, tu pourras calculer à la vitesse d'une calculatrice, aucune opération ne saura t'arrêter, le calcul mental n'aura plus de secret pour toi !","calculMentale.html"],["Souviens toi !","As-tu une mémoire de poisson rouge ??!! Attention top chrono tu as 10 secondes !! Observe bien le modèle et rappelle toi des 16 chiffres dans le bon ordre !","grilleMemo.html"]];
 // fonctions initiales
 //description_site();
 //creer_mosaique();
@@ -67,6 +67,8 @@ function table_navigation() {
 	e.setAttribute('class','off');
 	e.innerHTML = "<a href='"+lien+"informations.html' style='color:white;font-size:100%;'> <img src='images/lampe_mod.png' style = 'width:40px;height:40px;'/>Informations</a>";
 	
+	
+	document.getElementById("banniere").setAttribute('href',lien+'pages_jeux/rouletteChose.html');
 	if(page =='index') a.setAttribute('class','active');
 	if(page =='connexion') b.setAttribute('class','active');
 	if(page =='creer_compte') c.setAttribute('class','active');
