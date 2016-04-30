@@ -1,0 +1,59 @@
+<html lang fr-FR>
+	<head>	
+		<% include ../partials/head %>
+	</head>
+	
+	<body onload = "creer_mosaique();description_site();">
+		<div>
+		
+			<% include ../partials/header %>
+			
+			<div class="contenu">
+		
+            <div class="container">
+            <br>
+            <% if(!user) {%>
+            <form action="/connexion" class="form-signin" method="post">
+                <center><h2 class="form-signin-heading" style="color:#cce6ff; font-weight:bold;">Se Connecter</h2>
+                <p style="color:orange; text-align:center; font-weight:bold;">Pseudo</p>
+                <label for="inputUsername" class="sr-only">Pseudo</label>
+                <input name="username" type="text" id="inputUsername" class="form-control" style="width:30%;" placeholder="Pseudo" required autofocus>
+                <p style="color:orange; text-align:center; font-weight:bold;">Mot de Passe</p>
+                <label for="inputPassword" class="sr-only">Mot de Passe</label>
+                <input name="password" type="password" id="inputPassword" class="form-control" style="width:30%;" placeholder="Mot de passe" required>
+                <div class="checkbox">
+                    <label>
+                        <input name="remember" type="checkbox" value="remember-me"> Rester Connecté
+                    </label>
+                </div>
+                <br>
+                <button class="btn btn-lg btn-success btn-block" style="width:30%;" type="submit">Se connecter</button>
+                <br>
+                <% include ../partials/msg %>
+            </form>
+            <p style="text-align:center; font-weight:bold;">Vous n'avez pas de compte ? <a href="/creer_compte" style="font-weight:bold;color:red;" >Inscrivez-vous</a></p>
+           
+            <ul id="list"></ul>
+            </center>
+            <%}
+            else {%>
+            <br><br><br><br>
+            <center><p class='alert' style="text-align:center;font-size:25px;font-weight:bold;color:white;background-color:orange;width:30%;"> Vous êtes déjà connecté en tant que <%= user.username %></p>
+            <br>
+            <p style="text-align:center;font-size:25px;font-weight:bold;color:white;background-color:orange;width:30%;"><a href="/logout">Se déconnecter</a></p>
+            <br>
+            <p style="text-align:center;font-size:25px;font-weight:bold;color:white;background-color:orange;width:30%;"><a href="/liste_jeux"> Aller à la liste des jeux </a></p>
+            </center>
+            <%}%>
+            </div>   
+                
+			</div>
+		
+		</div>
+	
+		<% include ../partials/footer %>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="script/script.js"></script>
+		<script> page = 'connexion'; table_navigation(); </script>
+	</body>
+</html>

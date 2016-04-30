@@ -1,0 +1,82 @@
+<html lang fr-FR>
+	<head>	
+		<% include ../../partials/head1 %>
+		<audio id="audio_roue" src="mp3/roue_fortune.mp3"></audio>
+	</head>
+	
+	<body onload="pageJeux = true;table_navigation();">
+		<div>
+		
+		<% include ../../partials/header %>
+			
+			
+		
+		
+				
+	<div class="contenu"> 
+	<div id="roulette" style = "width:25%;height:100%;margin:auto;text-align:center;color:yellow;">
+	<button type="button" onclick="launch();" style="color:black;font-size: 100%;  width:100% ;height :10%; margin: auto;background-color:black;color:white;">RUN</button>
+	<div id="nom1" style="font-size:200%"> nom </div>
+	<div id="nom2" style="font-size:500%"> nom </div>
+	<div id="nom3" style="font-size:700%;border:red solid 6px;color:white;">  = nom = </div>
+	<div id="nom4" style="font-size:500%"> nom </div>
+	<div id="nom5" style="font-size:200%"> nom </div>
+	</div>
+	
+	</div></div>
+
+		
+	
+	
+        <% include ../../partials/footer %>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="../script/script.js"></script>
+		<script> page = 'liste_jeux'; </script>
+		<script>
+		
+		var nom = ['tancrede','jeremy','baptiste','bruno','quentin','alexandre','lucas','thomas','abel'];	
+		var nomEnCours = ['---','---','---','---','---'];
+		var countRound;
+		var chrono;
+ //1000 will  run it every 1 second
+		function countRounde()
+		{
+  		countRound=countRound-1;
+  		if (countRound <= -1)
+		{
+    	 clearInterval(chrono);
+		 document.getElementById('audio_roue').pause();
+		//counter ended, do something here
+     	return;
+		}
+			newName();
+		}
+	
+		function newName()
+		{
+			var index = Math.floor((Math.random() * nom.length));
+			for(var i=4;i>0;i--)
+			{
+				nomEnCours[i] = nomEnCours[i-1];
+			}
+			nomEnCours[0] = nom[index];
+			for(var i=1;i<6;i++)
+			{
+				document.getElementById('nom'+i).innerHTML = nomEnCours[i-1];
+			}
+		}
+		
+		function launch()
+		{
+			document.getElementById('audio_roue').play();
+			countRound= Math.floor((Math.random() * 40));
+			chrono = setInterval(countRounde,400);
+		}
+	
+		
+		
+		</script>
+	</body>
+
+	
+</html>

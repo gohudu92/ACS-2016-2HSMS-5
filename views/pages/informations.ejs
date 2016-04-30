@@ -1,0 +1,31 @@
+<html lang fr-FR>
+	<head>	
+		<% include ../partials/head %>
+	</head>
+	
+	<body onload = "creer_mosaique();description_site();">
+		<div>
+		
+			<% include ../partials/header %>
+            
+			<div class="contenu">
+			<center><div id="zone_texte" style="height: 360px;width: 529px;color: #ffff66;margin-top:30px;">
+				<h3 style='color:black;background-color:#ffff66;' id='titreArt'>Informations</h3>
+				<p id='corp' class="description_jeu">
+                Nous sommes un groupe de 5 étudiants de l'école d'ingénieurs ESILV :
+                <br>Hugo PIERRE, Hugo POUSSEUR, Mélanie PENEDA, Sofia Sali & Sébastien PERRIER.
+                <br>Nous avons pour but de vous proposer, dans le cadre de nos études, ce site qui regroupe de nombreux jeux d'entrainement cérébral. Les jeux vous permettront de tester votre mémoire et votre rapidité de réponse.
+                <br> <br>
+                Copyright 2HSMS-5 Edition 2016
+                </p>
+			</div>
+            </center>
+		
+		</div>
+	
+        <% include ../partials/footer %>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="script/script.js"></script>
+		<script> page = 'informations'; table_navigation(); </script>
+	</body>
+</html>

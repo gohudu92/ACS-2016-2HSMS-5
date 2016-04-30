@@ -1,0 +1,6 @@
+<% if(typeof msgs != 'undefined'){
+    console.log(msgs);
+    for(i in msgs){    %>    
+        <div class="alert alert-<%=msgs[i].type%>" style="width:30%;font-size:25px;font-weight:bold;"><%=msgs[i].msg%></div>
+<%  }
+}    %>

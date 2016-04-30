@@ -1,0 +1,182 @@
+<html lang fr-FR>
+	<head>	
+		<% include ../../partials/head1 %>
+	</head>
+	
+		<body onload="<% if(user) {%>description_jeu(5);<%}%>pageJeux = true;table_navigation();">
+		<div>
+		
+			<% include ../../partials/header %>
+				
+	<div class="contenu">
+        <% if(user) {%>
+	<div id="game" style="font-size:150%;border: 10px solid black;width:400px; float:right;margin-right:20%;height:100%;">
+		<button type="button" onclick="demarage();" style="background-color:black;width:100%;">RUN</button>
+	<div id='score' style="font-size:200%; text-align:center;"> SCORE </div></p>	
+	<div id='timingCalul' style="text-align:center;"> TIMER </div></p>
+	<div id="calcul" style = "font-size:300%;margin:auto;color:black;font-weight: bold;">
+	<p style="text-align:center;">	<div id="premierNB"> ... </div> 
+		<div id="operation" > + </div>
+		<div id="deuxiemeNB" > ...  </div>  
+		<div id="egal" > =  </div> 
+		<div id="resultat" > ...  </div>	</p>
+	</div>
+	<button type="button" onclick="toucheBool(true)" style="background-color:black;width:33%;color:green;"> Vrai </button>
+	<button type="button" onclick="toucheBool(false)" style="background-color:black;width:33%;color:red;"> Faux </button>
+	</div>
+	
+	<div align="down", class="description">
+				<h3 style='color:rgb(174,198,224);' id="titreGame">Description</h3>
+				<p class="description_jeu"> </p>
+			</div>
+    <%}
+            else {%><%include ../../partials/pas_co%> <%}%>
+		</div>
+
+		
+		<% include ../../partials/footer %>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="../script/script.js"></script>
+		<script> page = 'liste_jeux';  </script>
+		<script>
+			
+	var operatoir = ['+','-','*'];
+	var bool = false;
+	var fini = false;
+	var montre;
+	var score = 0;
+	var compteur;
+	
+	
+	function demarage()
+	{
+	randomNombre();
+	compteur = 30;
+	montre = setInterval(chrono,1000);
+	fini = false;
+	score = 0;
+	document.getElementById("score").innerHTML = 0;
+	}
+	
+	
+	
+	function randomNombre()
+	{
+	if(!fini)
+	{
+		var nb1 = Math.floor((Math.random() * 50)+1);
+		var nb2 = Math.floor((Math.random() * 50)+1);
+		var nb3;
+		var operatoirIndex = Math.floor((Math.random() * 3)+1)-1;
+		var choix =  Math.floor((Math.random() * 2)+1)-1;
+		document.getElementById('premierNB').innerHTML = nb1;
+		document.getElementById('deuxiemeNB').innerHTML = nb2;
+		var ope = operatoir[operatoirIndex];
+		document.getElementById('operation').innerHTML = ope;
+		if(choix == 1)
+		{
+			 nb3 = Math.floor((Math.random() * 50)+1);
+		}
+		else
+		{
+			
+			switch(ope)
+			{
+			case '+':
+				nb3 = nb1+nb2;
+				break;
+			case '-':
+				nb3 = nb1-nb2;
+				break;
+			case '*':
+				nb3 = nb1*nb2;
+				break;
+			}
+		}
+		document.getElementById('resultat').innerHTML = nb3;
+		
+		switch(ope)
+			{
+			case '+':
+				bool = (nb3 == nb1+nb2);
+				break;
+			case '-':
+				bool = (nb3 == nb1-nb2);
+				break;
+			case '*':
+				bool = (nb3 == nb1*nb2);
+				break;
+			}
+		
+	}
+	}
+	
+	function calculResult(valeur)
+	{
+	if(!fini)
+	{
+		var couleur;
+		if(valeur)
+		{
+			couleur = 'green';
+			score++;
+		}
+		else
+		{
+			couleur = 'red';
+			score--;
+		}
+		document.getElementById('calcul').style.border = "2px solid "+couleur;
+		document.getElementById("score").innerHTML = "score "+score;
+	}
+	}
+	
+	function toucheBool(valeurLocal)
+	{
+		if(valeurLocal == bool)
+		{
+			calculResult(true);
+		}
+		else
+		{
+			calculResult(false);
+		}
+		randomNombre();
+	}
+	
+	function chrono()
+	{
+		if(compteur == -1)
+		{
+		clearInterval(montre);
+		fini = true;
+		return;
+		}
+		document.getElementById('timingCalul').innerHTML = compteur + ' Secondes';
+		compteur--;
+	
+	}
+	
+	
+	
+	
+	function tempsRestant()
+	{
+		var tempsDepart = new Date().getTime();
+		var chrono = new Date().getTime();
+		document.getElementById('timingCalul').innerHTML = chrono/1000 + 'Secondes';
+		while(chrono < tempsDepart + 30000)
+		{
+		if(chrono % 5000 == 0)
+		{
+			document.getElementById('timingCalul').innerHTML = chrono + 'Secondes';
+		}
+		chrono = tempsDepart -  new Date().getTime();
+		}
+	}
+		
+				</script>
+	</body>
+
+	
+</html>

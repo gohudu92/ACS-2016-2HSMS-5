@@ -1,0 +1,79 @@
+<html lang fr-FR>
+	<head>	
+		<% include ../partials/head %>
+	</head>
+	
+	<body>
+		<div>
+			<% include ../partials/header %>
+				
+			<div class="contenu">
+                <% if(user) {%>
+				<div class='pres_jeux'>
+				<a href="pages_jeux/4images1mot"><img src='images/photo1.png' id='jeu1' onmouseover = 'dessus(this.id)'></a>
+				<h4> 4 images 1 mot </h4>
+				<p> C'est l'équivalent du célèbre jeu "4 images 1 mot" mais revisité selon notre TD G! Regardez les 4 images, et décelez ce qu'elles ont en commun !!  Découvrez pourquoi tout le monde va adorer ce jeu !!</p>
+				</div>
+				<div class='pres_jeux'  >
+				<a href="pages_jeux/memo"><img src='images/photo2.png' id='jeu2' onmouseover = 'dessus(this.id)'></a>
+				<h4> Memo </h4>
+				<p> Le Grand classique des jeux de réflexion par excellence.
+				Le Principe reste le même: s'entrainer à mémoriser les emplacements des différentes cartes de couleurs.
+				Retournes les cartes et trouves un maximum de paires en un minimum de temps!
+				</p>
+				</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/clickRapide"><img src='images/photo3.png' id='jeu3' onmouseover = 'dessus(this.id)'></a>
+				<h4> Click Rapide</h4>
+				<p> Tu crois connaitre tes couleurs ? 
+				Tu as peut-être eu l'impression d'être rapide lors du quizz en base de donnée.
+				Voyons voir si tout ca est bien vrai ! 
+				Appuies sur la case rouge à chaque fois qu'elle apparaît .. Mais attention trompes toi de couleurs et tes points seront 
+				négatifs!</p>
+				</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/FastAndWrite"><img src='images/photo4.png' id='jeu4' onmouseover = 'dessus(this.id)'></a>
+				<h4> Fast And Write </h4>
+				<p>On m'a dit que à l'Esilv à force de toucher le clavier touts les étudiants écrivaient à la vitesse de la lumière.
+J'aimerai bien voir ça!
+1 mot un clavier et à toi de jouer ! Écris le plus de mots en moins de temps possible !</p>
+				</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/flecheEvo"><img src='images/photo5.png' id='jeu5' onmouseover = 'dessus(this.id)'></a>
+				<h4> Une couleur, Une porte</h4>
+				<p>Aides toi des touches du clavier et passes les portes selon les bonnes couleurs.
+Jeux de rapidité et de couleurs. Voyons voir si tu es capable d'associer couleurs et rapidité !</p>
+				</div>
+				<div class='pres_jeux' >
+				<a href="pages_jeux/calculMentale"><img src='images/photo6.png' id='jeu6' onmouseover = 'dessus(this.id)'></a>
+				<h4> Calcul mental </h4>
+				<p> Ca prend sa calculette pour faire 2+2 en partiel, entraine toi ici ! Grâce à ce jeu, tu pourras calculer à la vitesse d'une calculatrice, aucune opération ne saura t'arrêter, le calcul mental n'aura plus de secret pour toi !p>
+				</div>
+				<div class='pres_jeux'>
+				<a href="pages_jeux/grilleMemo"><img src='images/photo7.png' id='jeu7' onmouseover = 'dessus(this.id)'></a>
+				<h4> Souviens toi ! </h4>
+				<p> As-tu une mémoire de poisson rouge ??!! Attention top chrono tu as 10 secondes !! Observe bien le modèle et rappelle toi des 16 chiffres dans le bon ordre !</p>
+				</div>
+                <img src='images/photo1.png' id='photoSelect' class="pres_jeux" style='width:300px;'>
+		
+                <%}
+            else {%> <% include ../partials/pas_co %> <%}%>
+		</div>
+	
+		<% include ../partials/footer %>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="script/script.js"> </script>
+		<script> page = 'liste_jeux'; table_navigation(); </script>
+		<script>
+		
+		var imageActu = 'images/photo1.png';
+		function dessus(id)
+		{
+			imageActu = document.getElementById(id).src;
+			document.getElementById('photoSelect').src = imageActu;
+		}
+		
+		
+		</script>
+	</body>
+</html>

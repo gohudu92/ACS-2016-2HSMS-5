@@ -1,0 +1,228 @@
+<html lang fr-FR>
+	<head>	
+		<% include ../../partials/head1 %>
+	</head>
+	
+	<body onload="<% if(user) {%>description_jeu(1);<%}%>pageJeux = true;table_navigation();">
+		<div>
+		
+			<% include ../../partials/header %>
+						
+	<div class="contenu">
+        <% if(user) {%>
+	<div id="game" style="font-size:150%;border: 10px solid black;width:400px; float:right;margin-right:20%;height:100%;">
+     <p div id="timing"> TEMPS FINAL </p>
+		<button type="button" onclick="remiseAuDebut()" style="background-color:black; margin:auto; height:50px; width:100px;">shake</button>
+		<div id="memo">
+		<div class="colonne">
+				<img id="pos11" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos21" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos31" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos41" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		<div class="colonne">
+				<img id="pos12" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos22" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos32" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos42" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		<div class="colonne">
+				<img id="pos13" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos23" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos33" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos43" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		<div class="colonne">
+				<img id="pos14" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos24" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos34" src="img/cache.png" onclick="retourne(this.id)">
+				<img id="pos44" src="img/cache.png" onclick="retourne(this.id)">		
+		</div>
+		</div>
+		</div>
+			<div align="down", class="description">
+				<h3 style='color:rgb(174,198,224);' id="titreGame" >Description</h3>
+				<p class="description_jeu"> </p>
+			</div>
+        <%}
+            else {%><%include ../../partials/pas_co%> <%}%>
+		</div>
+
+		
+	
+	
+		<% include ../../partials/footer %>
+		<script type="text/javascript" $('#myTabs a:first').tab('show')></script>
+		<script type="text/javascript" src="../script/script.js"></script>
+		<script> page = 'liste_jeux'; </script>
+		<script>
+		
+		var position = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44];
+	
+	function aleaPhoto()
+	{
+	
+	var position = [11,12,13,14,21,22,23,24,31,32,33,34,41,42,43,44];
+	var index = 1;
+	var resultAlea = new Array(16);
+	while(index < 9)
+	{
+			
+			var longueurTab = position.length;
+			var pos1 = Math.floor((Math.random() * longueurTab)+1)-1;
+			var pos2 = Math.floor((Math.random() * longueurTab)+1)-1;
+			while(pos1 == pos2)
+			{
+				pos2 = Math.floor((Math.random() * longueurTab)+1)-1;
+			}
+			
+		
+			// ------------ //
+			
+			var position2 = new Array(longueurTab-2);
+			var num = 0;
+			for(var i=0;i<longueurTab;i++)
+			{
+				if(i != pos1 && i != pos2)
+				{
+					position2[num] = position[i];
+					num++;
+				}
+			}
+			
+			resultAlea[(index-1)*2] = position[pos1];
+			resultAlea[(index-1)*2+1] = position[pos2];
+			
+			
+			position = new Array(longueurTab-2);
+			for(var i=0;i<longueurTab-2;i++)
+			{	
+					position[i] = position2[i];							
+			}
+			
+			
+		index++;
+	}
+	return resultAlea;
+	};
+	
+	var photoActu = aleaPhoto();
+	console.log(photoActu[10]);
+	
+	var seul = true;
+	var dernierVue = new Array(2); // on stcock en 0 position et en 1 l'image
+	var depuceler = false;
+	var tempsDepart = 0;
+	var compteur=0;
+	
+	function retourne(id)
+	{
+		if(!document.getElementById(id).src.match('check'))
+		{
+		
+		if(!depuceler)
+		{
+			tempsDepart = new Date().getTime();
+		}
+		
+		var positionString = id[id.length-2];
+		positionString += id[id.length-1];
+		
+		var index = 0;
+		while(photoActu[index]!=positionString)
+			{
+				index++;
+			}
+			
+		index = (index -index%2)/2;
+		index++;
+		
+		
+		var posID1 = 'pos'+positionString;
+		var posID2 = 'pos'+dernierVue[0];
+			
+		var image1 = document.getElementById(posID1);
+		var image2 = document.getElementById(posID2);
+			
+		
+		
+		if(seul)
+		{
+			remiseZero();
+			seul = false;
+			dernierVue[0] = positionString;
+			dernierVue[1] = index;
+			image1.src = 'img/photo'+index+'.png';
+		}
+		
+		else
+		{
+			seul = true;
+			image1.src = 'img/photo'+index+'.png';			
+			if(dernierVue[1] == index && dernierVue[0] != positionString)
+			{
+				var nomPhoto = 'img/check.png';
+				image1.src = nomPhoto;
+				image2.src = nomPhoto;
+				compteur++;
+			}
+			if(compteur == 8)
+			{
+				var chrono = new Date().getTime() - tempsDepart;
+				document.getElementById('timing').innerHTML = chrono/1000 + 'Secondes';
+				
+			}
+		
+		}
+		depuceler = true;
+		}
+	};
+	
+	function remiseZero()
+	{
+		for(var i=0;i<16;i++)
+		{
+			var image = document.getElementById('pos'+position[i]);
+			if(!image.src.match('check'))
+			{
+				image.src = 'img/cache.png';
+			}
+		}
+	
+	}
+	
+	function remiseAuDebut()
+	{
+		for(var i=0;i<16;i++)
+		{
+			var image = document.getElementById('pos'+position[i]);
+			image.src = 'img/cache.png';
+		}
+		photoActu = aleaPhoto();
+		seul = true;
+		dernierVue = new Array(2); // on stcock en 0 position et en 1 l'image
+		depuceler = false;
+		tempsDepart = 0;
+		compteur=0;
+		document.getElementById('timing').innerHTML = 'TEMPS FINAL';
+	
+	}
+	var countTIM = 30;
+	function timerCount()
+	{
+  		countTIM=countTIM-1;
+  		if (countTIM <= -1)
+  		{
+    		 clearInterval(counter);
+     //counter ended, do something here
+    	 	return;
+  		}		
+	prochaineEtape();
+  //Do code for showing the number of seconds here
+	}
+		
+		</script>
+	</body>
+
+	
+</html>
