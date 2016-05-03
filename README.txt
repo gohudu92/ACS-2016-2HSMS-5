@@ -1,5 +1,8 @@
 # ACS-2016-2HSMS-5
 
+# SP 30/04/16 : Correction Bug
+				Finalisation HTML
+
 # SP 26/03/16 : Ajout de la mosaique d'Hugo (adaptation à l'HTML, sans références aux jeux pour l'instant)
 		Ajout du script pour la génération des pages
 		Ajout des images dans le dossier "images"
